@@ -1,56 +1,81 @@
-# termmux: A Rust Terminal Multiplexer
+# termmux
+Terminal multiplexer for the modern terminal experience
 
-## What is it?
+termmux is a terminal multiplexer written in Rust. It allows you to split your terminal into multiple windows, manage sessions, and resize windows on the fly. I built this because I got tired of using the built-in `tmux` and wanted something with a simpler API.
 
-termmux is a terminal multiplexer written in Rust. It allows you to split your terminal into multiple windows, resize them, and manage multiple sessions.
+## Installation
 
-## Features
+To install termmux, add the following to your `Cargo.toml`:
 
-*   Terminal splitting
-*   Window resizing
-*   Session management
+```toml
+[dependencies]
+termmux = "0.1.0"
+```
 
-## Dependencies
+Then, run the following command in your terminal:
 
-*   crossbeam
-*   termion
+```bash
+cargo install termmux
+```
 
 ## Usage
 
-To use termmux, simply compile and run the binary:
+To start termmux, simply run the following command:
 
 ```bash
-cargo run
+termmux
 ```
 
-## Build from Source
+This will open a new terminal window with a termmux prompt. You can then split windows, create new sessions, and resize windows using the built-in termmux commands.
 
-To build termmux from source, clone the repository and run:
+## Building from Source
+
+To build termmux from source, simply clone this repository and run the following command:
 
 ```bash
 cargo build
 ```
 
+This will build the termmux executable.
+
+## Running Tests
+
+To run the tests for termmux, simply run the following command:
+
+```bash
+cargo test
+```
+
+This will run all the tests in the `tests` directory.
+
 ## Project Structure
 
-The project is structured as follows:
+Here is a high-level overview of the project structure:
 
-*   `Cargo.toml`: Rust project configuration
-*   `src/main.rs`: Main entry point
-*   `src/mux.rs`: Terminal multiplexer logic
-*   `src/utils.rs`: Utility functions
-*   `tests/main.rs`: Unit tests for main entry point
-*   `tests/mux.rs`: Unit tests for terminal multiplexer
-*   `Cargo.lock`: Dependency lock file
+* `src/main.rs`: The main entry point for termmux.
+* `src/parser.rs`: Handles parsing of user input.
+* `src/window.rs`: Handles window management.
+* `src/session.rs`: Handles session management.
+* `tests`: Contains all the test cases for termmux.
 
 ## License
 
-termmux is licensed under the MIT License.
+Copyright (c) 2026 SamyAlderson
 
-## Architecture
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-termmux uses the `crossbeam` library for concurrency and the `termion` library for terminal manipulation. The terminal multiplexer logic is implemented in `src/mux.rs`, while utility functions are implemented in `src/utils.rs`. The main entry point is in `src/main.rs`.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-## Code Standards
-
-termmux follows idiomatic Rust conventions and best practices. The code is well-structured, readable, and maintainable. Clear comments explain non-obvious decisions, and proper error handling is implemented throughout the codebase.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
