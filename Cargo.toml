@@ -1,4 +1,35 @@
 [package]
 name = "termmux"
-version = "0.1.0"
+version = "1.0.0"
 edition = "2021"
+
+[dependencies]
+crossbeam = "0.8.5"
+termion = "1.5.7"
+
+[features]
+terminal-splitting = []
+window-resizing = []
+session-management = []
+
+[lib]
+name = "termmux"
+path = "src/lib.rs"
+
+[bin]
+name = "termmux"
+path = "src/main.rs"
+
+[dev-dependencies]
+[build-dependencies]
+
+[tool]
+cargo = { version = "1.65.0", features = ["rustc-hash"] }
+
+[profile.release]
+opt-level = "z"
+lto = true
+
+[profile.debug]
+debug-assertions = true
+gdb = true
