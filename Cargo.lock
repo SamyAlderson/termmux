@@ -1,0 +1,11 @@
+Cargo.lock
+```toml
+[package]
+name = "termmux"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+crossbeam = "0.8.4"
+termion = "1.5.9"
+```
