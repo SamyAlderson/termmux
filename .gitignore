@@ -1,7 +1,7 @@
 # .gitignore
-# ignore node_modules and yarn.lock
+
+# ignore node_modules
 node_modules/
-yarn.lock
 
 # ignore rust artifacts
 target/
@@ -9,14 +9,11 @@ target/
 # ignore cargo.lock
 cargo.lock
 
-# ignore vscode settings
-.vscode/
+# ignore rustfmt cache
+.rustfmt
 
 # ignore python cache
 __pycache__/
 
-# ignore python logs
-logs/
-
-# ignore python pyc files
-*.pyc
+# ignore python log files
+*.log
