@@ -1,21 +1,19 @@
 # .gitignore
-# ignore node_modules and other build artifacts
+# ignore node_modules and yarn.lock
 node_modules/
-dist/
-*.log
-*.bak
-*.tmp
+yarn.lock
+
+# ignore rust binaries
+target/
+
+# ignore python cache
+.cache/
 
 # ignore IDE files
 .idea/
 .vscode/
 
-# ignore build artifacts
-target/
-Cargo.lock
-Cargo.toml.e
-
 # ignore other stuff
+*.log
+*.tmp
 *.swp
-*.swo
-*.DS_Store
